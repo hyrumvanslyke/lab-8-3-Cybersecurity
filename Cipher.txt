@@ -1,0 +1,56 @@
+My Cipher will be assigning each letter a number that is 4 greater than its index in the alphabet with dashes between every letter
+A=5
+B=6
+C=7
+D=8
+E=9
+F=10
+G=11
+H=12
+I=13
+J=14
+K=15
+L=16
+M=17
+N=18
+O=19
+P=20
+Q=21
+R=22
+S=23
+T=24
+U=25
+V=26
+W=1
+X=2
+Y=3
+Z=4
+so the cipher for "I love cryptography" would be "13-16-19-26-9-7-22-3-20-24-19-11-22-5-20-12-3"
+If you plugged that into my cipher then you would get back "ILOVECARTOGRAPHY" which is recognizable enough to figure out the phrase.
+
+function cipher(str){
+      const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+  const ciphered = [];
+
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i].toLowerCase();
+    const index = alphabet.indexOf(char);
+
+    if (index !== -1) {
+      const ciIndex = (index + 4) % 26;
+      const ciChar = alphabet[ciIndex];
+      ciphered.push(ciChar);
+    } else {
+      ciphered.push(char);
+    }
+  }
+
+  return ciphered.join('-');
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////
+Yahoo Data Breach
+The Yahoo data breach, which occurred in 2013 but was only disclosed in 2016, ranks among the most significant cybersecurity incidents in history. Hackers targeted Yahoo, one of the world's largest email service providers, and successfully compromised the personal data of approximately 3 billion user accounts. The breach exposed users' names, email addresses, phone numbers, birth dates, and hashed passwords, dealing a severe blow to Yahoo's reputation. Cybercriminals sought to acquire valuable personal information for identity theft, phishing attacks, and other malicious purposes.The primary tech flaws that led to the Yahoo breach were related to weak security practices and outdated systems. The hackers gained initial access through a spear-phishing attack, targeting Yahoo employees with tailored emails containing malware. Once inside the network, the attackers exploited a combination of outdated and vulnerable software components to traverse through the company's infrastructure, eventually gaining access to the user database. One of the critical tech flaws was Yahoo's use of MD5 hashing for password storage, which is susceptible to brute-force attacks. The hackers managed to crack the hashed passwords, providing them with access to the accounts. In response to the breach, Yahoo took significant steps to enhance its security measures and protect against future vulnerabilities. The company implemented multi-factor authentication to strengthen user account security. Yahoo also invested in upgrading its security infrastructure and implemented regular security audits to identify and address potential weaknesses in a quick fashion.
+
+
